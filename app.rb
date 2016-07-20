@@ -16,6 +16,7 @@ class RepoDepot < Sinatra::Base
     user = params["user_name"]
 
     repo_list = RepoClient.new(user).get_user_repo
+
     ERB.new(File.read("./html/repository.html.erb")).result(binding)
   end
 

@@ -7,7 +7,7 @@ require "./app"
 
 class RepoDepotTest < MiniTest::Test
 
-include Rack::Test::Methods
+  include Rack::Test::Methods
 
   def app
     RepoDepot
@@ -19,7 +19,7 @@ include Rack::Test::Methods
   end
 
   def test_repo_route
-    response = post "/get_repo", "user_name" => "austenlockwood" 
+    response = post "/get_repo", "user_name" => "austenlockwood"
     assert_includes response.body, "12_days"
   end
 
