@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="styles.css" media="screen"/>
+    <title>Repo Depot</title>
+  </head>
+  <body>
+    <h1>REPO DEPOT</h1>
+
+    <p>GitHub user <%= user %> has the following repositories: </p>
+
+    <% repo_list.each do |repo| %>
+
+      <p>
+        <a href="https://www.github.com/<%=repo["full_name"]%>"><%=repo["name"]%></a>
+      </p>
+
+    <% end %>
+
+    <form action="/get_repo" method="post">
+    </form>
+  </body>
+</html>
