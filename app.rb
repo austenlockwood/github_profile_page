@@ -15,7 +15,7 @@ class RepoDepot < Sinatra::Base
   post "/get_repo" do
     user = params["user_name"]
 
-    repo_list = RepoClient.new(user).return_user_repo
+    repo_list = RepoClient.new(user).get_user_repo
     ERB.new(File.read("./html/repository.html.erb")).result(binding)
   end
 

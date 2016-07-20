@@ -9,12 +9,8 @@ class RepoClient
     @user = user
   end
 
-
   def get_user_repo
     self.class.get("/#{@user}/repos") #    .json
   end
 
-  def return_user_repo
-    get_user_repo
-  end
 end
